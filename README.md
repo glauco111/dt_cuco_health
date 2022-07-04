@@ -52,3 +52,15 @@ Foi trabalhado também a questão da responsividade da aplicação, de maneira s
 <br><br>
 ![tablet 1](/images/small_screen-1.png)
 ![tablet 2](/images/small_screen-2.png)
+
+## Rodando o projeto
+
+Possuindo o ambiente flutter/dart instalado e configurado, realize os passos a seguir:
+- Execute os comandos a seguir:
+
+```
+flutter pub get
+flutter pub run build_runner build 
+```
+- Execute a aplicação
+
