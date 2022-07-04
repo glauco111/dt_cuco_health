@@ -1,5 +1,6 @@
 # Cuco Health
 ## Desafio Técnico 
+![Download apk](https://github.com/eduardo-and/dt_cuco_health/raw/master/cuco_health.apk)
 ### Descrição
 O desafio consiste em desenvolver um app simples em Flutter, composto por apenas 3
 páginas. A primeira será sua splash screen, que fará a transição para a Home . Nela você
