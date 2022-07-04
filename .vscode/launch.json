@@ -6,17 +6,20 @@
     "configurations": [
         {
             "name": "cuco_health",
+            "cwd": "cuco_health",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "cuco_health (profile mode)",
+            "cwd": "cuco_health",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "cuco_health (release mode)",
+            "cwd": "cuco_health",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
