@@ -41,14 +41,14 @@ Alguns packages e decisões arquiteturais do projeto:
    - google_fonts
    - flutter_launcher_icons
 
-<br><br>
-
+<br>
 Foi trabalhado também a questão da responsividade da aplicação, de maneira simples mas funcional para a maioria dos casos
+
 ### Tablet
 <br><br>
 ![tablet 1](/images/tablet-1.png)
 ![tablet 2](/images/tablet-2.png)
 ### Small Screens
 <br><br>
-![tablet 1](/images/tablet-1.png)
-![tablet 2](/images/tablet-2.png)
+![tablet 1](/images/small_screen-1.png)
+![tablet 2](/images/small_screen-2.png)
