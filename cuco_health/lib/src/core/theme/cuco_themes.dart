@@ -8,17 +8,6 @@ import 'cuco_fonts.dart';
 import 'cuco_icons.dart';
 
 abstract class CucoThemes {
-  final CucoFonts _fonts;
-  final CucoIcons _icons;
-
-  CucoThemes(
-      {required CucoColorsLight lightColors,
-      required CucoColorsDark darkColors,
-      required CucoFonts fonts,
-      required CucoIcons icons})
-      : _fonts = fonts,
-        _icons = icons;
-
   static ThemeData get dark {
     return customTheme(
       brightness: Brightness.light,

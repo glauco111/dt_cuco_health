@@ -1,13 +1,10 @@
+import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
+import 'package:cuco_health/src/modules/perfil/presentation/widgets/perfil_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../core/domain/entities/person_entities.dart';
 import '../../../../core/theme/cuco_colors.dart';
 import '../../../../core/theme/cuco_icons.dart';
-import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../bottom_navigation/presentation/controller/bottom_navigation_controller.dart';
 
 class SuccessPerfilPage extends StatefulWidget {
   final Person person;
@@ -46,10 +43,8 @@ class _SuccesssPageSPerfiltate extends State<SuccessPerfilPage> {
                 child: Column(
               children: [
                 header(theme),
-                SizedBox(height: 40),
-                body(
-                  theme,
-                )
+                SizedBox(height: 40.scale),
+                PerfilBodyWidget(person: widget.person)
               ],
             )),
           ],
@@ -62,14 +57,14 @@ class _SuccesssPageSPerfiltate extends State<SuccessPerfilPage> {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 10),
-          width: 202,
-          height: 202,
+          margin:  EdgeInsets.only(top: 10.scale),
+          width: 202.scale,
+          height: 202.scale,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: theme.colorScheme.secondary,
               border: Border.all(
-                  color: CucoColors.of(context).secundary, width: 2)),
+                  color: CucoColors.of(context).secundary, width: 2.scale)),
           child: ClipOval(
             child: Image.network(
               widget.person.photo,
@@ -88,64 +83,5 @@ class _SuccesssPageSPerfiltate extends State<SuccessPerfilPage> {
     );
   }
 
-  Widget body(ThemeData theme) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        children: [
-          detailItens(
-              theme: theme,
-              icon: CucoIcons.email,
-              key: 'Email',
-              value: widget.person.email),
-          const SizedBox(height: 20),
-          detailItens(
-              theme: theme,
-              icon: CucoIcons.phone,
-              key: 'Celular',
-              value: widget.person.phone),
-          const SizedBox(height: 20),
-          detailItens(
-              theme: theme,
-              icon: CucoIcons.location,
-              key: 'Local',
-              value: widget.person.local),
-          const SizedBox(height: 20),
-          detailItens(
-              theme: theme,
-              icon: CucoIcons.cake,
-              key: 'Idade',
-              value: '${widget.person.age} Anos')
-        ],
-      ),
-    );
-  }
-
-  Widget detailItens(
-      {required ThemeData theme,
-      required IconData icon,
-      required String key,
-      required String value}) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Icon(icon),
-        const SizedBox(
-          width: 10,
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Flexible(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(key, style: theme.textTheme.overline),
-              Text(value, style: theme.textTheme.bodyText1),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
+ 
 }

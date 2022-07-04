@@ -19,14 +19,14 @@ class FriendsDataSource implements IFriendsDataSource {
           await _dio.get(Constants.endPoint, queryParameters: queryParameters);
       if (response.statusCode == 200) {
         List data = response.data['results'];
-        
+
         return List.generate(
             data.length, (index) => PersonModel.fromMap(data[index]));
       } else {
-        throw Exception('Falha ao obter usuário');
+        throw Exception(response.data);
       }
     } catch (e) {
-      throw Exception('Falha ao obter usuário');
+      throw Exception(e.toString());
     }
   }
 }

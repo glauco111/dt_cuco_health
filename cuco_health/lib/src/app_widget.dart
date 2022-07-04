@@ -1,10 +1,12 @@
 import 'package:cuco_health/src/modules/friends/domain/usecases/get_friends_usecase.dart';
 import 'package:cuco_health/src/modules/friends/presentation/controller/friends_controller.dart';
+import 'package:cuco_health/src/modules/friends_details/page/friends_details_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 
+import 'core/domain/entities/person_entities.dart';
 import 'core/network/dio_config.dart';
 import 'core/theme/cuco_themes.dart';
 import 'core/theme/store/theme_store.dart';
@@ -81,6 +83,7 @@ class _AppWidgetState extends State<AppWidget> {
               routes: {
                 '/': (context) => const SplashPage(),
                 '/home': (context) => const CucoPageView(),
+                '/friends/details': (context) =>  FriendsDetailsPage(person: ModalRoute.of(context)!.settings.arguments as Person),
               },
               initialRoute: '/'));
     });

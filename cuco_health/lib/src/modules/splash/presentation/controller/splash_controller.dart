@@ -5,7 +5,7 @@ class SplashController {
   SplashController();
 
   Future<void> pipeline(BuildContext context) async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
     Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
   }
 }

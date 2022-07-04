@@ -7,7 +7,6 @@ import 'package:flutter/cupertino.dart';
 import '../../../../core/domain/entities/person_entities.dart';
 import '../../../../core/domain/enums/page_state.dart';
 import '../../../../core/error/failures.dart';
-import '../../../bottom_navigation/presentation/controller/bottom_navigation_controller.dart';
 import 'package:mobx/mobx.dart';
 part 'friends_controller.g.dart';
 

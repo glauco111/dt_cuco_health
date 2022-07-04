@@ -25,6 +25,5 @@ class CucoPageView extends StatelessWidget {
             ],
             physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics())));
-    // physics: const NeverScrollableScrollPhysics()));
   }
 }

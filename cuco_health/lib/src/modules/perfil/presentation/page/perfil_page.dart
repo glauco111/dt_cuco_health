@@ -1,3 +1,4 @@
+import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:cuco_health/src/modules/bottom_navigation/presentation/controller/bottom_navigation_controller.dart';
 
 import '../../../../core/domain/enums/page_state.dart';
@@ -30,9 +31,8 @@ class _PerfilPageState extends State<PerfilPage>
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: const CustomAppBar(height: 50, title: 'Meu Perfil'),
+      appBar: CustomAppBar(height: 50.scale, title: 'Meu Perfil'),
       body: Observer(builder: (context) {
         if (controller.state.isSuccess) {
           return SuccessPerfilPage(person: controller.person!);

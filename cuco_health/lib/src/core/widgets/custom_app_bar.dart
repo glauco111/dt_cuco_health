@@ -1,3 +1,4 @@
+import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -10,7 +11,9 @@ import '../theme/store/theme_store.dart';
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String? title;
   final double height;
-  const CustomAppBar({Key? key, required this.height, this.title})
+  final bool back;
+  const CustomAppBar(
+      {Key? key, required this.height, this.title, this.back = false})
       : super(key: key);
 
   @override
@@ -34,9 +37,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
     final theme = Theme.of(context);
 
     return AppBar(
+      leading: widget.back
+          ? IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: Icon(
+                Icons.arrow_back_rounded,
+                color: Theme.of(context).backgroundColor,
+              ))
+          : null,
       title: widget.title != null
           ? Padding(
-              padding: const EdgeInsets.only(left: 5),
+              padding: EdgeInsets.only(left: 5.scale),
               child: Text(
                 widget.title!,
                 style: theme.textTheme.subtitle1!
@@ -45,7 +56,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             )
           : null,
       elevation: 0,
-      toolbarHeight: widget.height,
+      toolbarHeight: widget.height.scale,
       backgroundColor: Theme.of(context).primaryColor,
       actions: [
         Observer(builder: (context) {

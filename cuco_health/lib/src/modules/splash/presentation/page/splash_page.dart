@@ -1,3 +1,4 @@
+import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -13,7 +14,6 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  
   late final SplashController controller;
 
   @override
@@ -31,16 +31,16 @@ class _SplashPageState extends State<SplashPage> {
           const SizedBox(),
           Center(
             child: SizedBox(
-              width: 171,
-              height: 207,
+              width: 171.scale,
+              height: 207.scale,
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                    left: 49,
-                    top: 23,
+                    left: 49.scale,
+                    top: 23.scale,
                     child: SizedBox(
-                      width: 72,
-                      height: 72,
+                      width: 72.scale,
+                      height: 72.scale,
                       child: CircularProgressIndicator(
                         backgroundColor: Theme.of(context).secondaryHeaderColor,
                         color: Theme.of(context).primaryColor,
@@ -50,8 +50,8 @@ class _SplashPageState extends State<SplashPage> {
                   Positioned(
                     child: Image.asset(
                       'assets/images/vertical_logo.png',
-                      width: 170,
-                      height: 207,
+                      width: 170.scale,
+                      height: 207.scale,
                     ),
                   ),
                 ],
@@ -59,8 +59,8 @@ class _SplashPageState extends State<SplashPage> {
             ),
           ),
           Container(
-              padding: EdgeInsets.only(bottom: 20),
-              child: Text('Inicializando..'))
+              padding: EdgeInsets.only(bottom: 20.scale),
+              child: const Text('Inicializando..'))
         ],
       ),
     );

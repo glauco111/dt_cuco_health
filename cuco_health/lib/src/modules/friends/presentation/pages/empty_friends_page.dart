@@ -1,3 +1,4 @@
+import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:cuco_health/src/modules/friends/presentation/controller/friends_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -17,14 +18,12 @@ class _EmptyFriendsPageState extends State<EmptyFriendsPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Center(
-      child: Column(mainAxisAlignment: MainAxisAlignment.center,
-       children: [
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Image.asset(
           'assets/images/empty.png',
-          width: 293,
-          height: 381,
+          width: 293.scale,
+          height: 381.scale,
         ),
         const Text('Nenhum amigo encontrado')
       ]),
