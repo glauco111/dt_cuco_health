@@ -19,12 +19,15 @@ dependencies:
   dartz: ^0.10.1
   provider: ^6.0.3
   dio: ^4.0.6
+  
 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  patrol: ^2.2.2
+
 
   flutter_lints: ^1.0.0
   build_runner: ^2.1.11
@@ -40,3 +43,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+patrol:
+  app_name: Cuco Health
+  android:
+    package_name: com.example.cuco_health
+  ios:
+    bundle_id: com.example.cuco_health
+  macos:
+    bundle_id: com.example.cuco_health
+

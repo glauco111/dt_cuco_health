@@ -76,7 +76,7 @@ class _SuccessFriendsDetailsPage extends State<SuccessFriendsDetailsPage> {
           ),
         ),
         SizedBox(
-          height: 10.scale,
+          height: 5.scale,
         ),
         Text(widget.person.name, style: theme.textTheme.headline4),
         Text(widget.person.title,

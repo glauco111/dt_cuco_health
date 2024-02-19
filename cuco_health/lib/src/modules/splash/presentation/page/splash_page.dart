@@ -1,7 +1,5 @@
 import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 
 import '../controller/splash_controller.dart';
@@ -42,6 +40,7 @@ class _SplashPageState extends State<SplashPage> {
                       width: 72.scale,
                       height: 72.scale,
                       child: CircularProgressIndicator(
+                        key: const Key('keyCircularProgress'),
                         backgroundColor: Theme.of(context).secondaryHeaderColor,
                         color: Theme.of(context).primaryColor,
                       ),
@@ -52,6 +51,7 @@ class _SplashPageState extends State<SplashPage> {
                       'assets/images/vertical_logo.png',
                       width: 170.scale,
                       height: 207.scale,
+                      key: const Key('logoImage'),
                     ),
                   ),
                 ],
@@ -60,7 +60,9 @@ class _SplashPageState extends State<SplashPage> {
           ),
           Container(
               padding: EdgeInsets.only(bottom: 20.scale),
-              child: const Text('Inicializando..'))
+              child: const Text(
+                'Inicializando..',
+              ))
         ],
       ),
     );

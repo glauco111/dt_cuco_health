@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/domain/entities/person_entities.dart';
 import '../../../../core/theme/cuco_colors.dart';
-import '../../../../core/theme/cuco_icons.dart';
+import '../../../../core/utils/keys.dart';
 
 class SuccessPerfilPage extends StatefulWidget {
   final Person person;
@@ -57,7 +57,7 @@ class _SuccesssPageSPerfiltate extends State<SuccessPerfilPage> {
     return Column(
       children: [
         Container(
-          margin:  EdgeInsets.only(top: 10.scale),
+          margin: EdgeInsets.only(top: 10.scale),
           width: 202.scale,
           height: 202.scale,
           decoration: BoxDecoration(
@@ -66,6 +66,7 @@ class _SuccesssPageSPerfiltate extends State<SuccessPerfilPage> {
               border: Border.all(
                   color: CucoColors.of(context).secundary, width: 2.scale)),
           child: ClipOval(
+            key: Keys.photoPerfil,
             child: Image.network(
               widget.person.photo,
               fit: BoxFit.cover,
@@ -75,13 +76,14 @@ class _SuccesssPageSPerfiltate extends State<SuccessPerfilPage> {
         const SizedBox(
           height: 10,
         ),
-        Text(widget.person.name, style: theme.textTheme.headline4),
+        Text(
+            key: Keys.namePerfil,
+            widget.person.name,
+            style: theme.textTheme.headline4),
         Text(widget.person.title,
             style: theme.textTheme.overline!
                 .copyWith(color: theme.colorScheme.secondary)),
       ],
     );
   }
-
- 
 }

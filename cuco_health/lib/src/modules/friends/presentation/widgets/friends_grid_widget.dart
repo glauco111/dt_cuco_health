@@ -2,6 +2,7 @@ import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/domain/entities/person_entities.dart';
+import '../../../../core/utils/keys.dart';
 
 class FriendsGridWidget extends StatefulWidget {
   final List<Person> friends;
@@ -17,6 +18,7 @@ class _FriendsGridWidgetState extends State<FriendsGridWidget> {
     final theme = Theme.of(context);
 
     return GridView.builder(
+      key: Keys.gridKey,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: screenAdapter() > 1.0 ? 3 : 2,
         childAspectRatio: 1,
@@ -26,7 +28,7 @@ class _FriendsGridWidgetState extends State<FriendsGridWidget> {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding:
-          EdgeInsets.only(left: 30.scale, right: 30.scale, bottom: 30.scale),
+          EdgeInsets.only(left: 20.scale, right: 20.scale, bottom: 20.scale),
       itemCount: widget.friends.length,
       itemBuilder: (context, index) {
         return friendsCards(theme, index);
@@ -36,6 +38,7 @@ class _FriendsGridWidgetState extends State<FriendsGridWidget> {
 
   Widget friendsCards(ThemeData theme, int index) {
     return InkWell(
+      key: Keys.friendCard,
       onTap: () {
         Navigator.pushNamed(context, '/friends/details',
             arguments: widget.friends[index]);
@@ -58,8 +61,8 @@ class _FriendsGridWidgetState extends State<FriendsGridWidget> {
             Column(
               children: [
                 Container(
-                  width: 179.scale,
-                  height: 130.scale,
+                  width: 139.scale,
+                  height: 50.scale,
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(10),
@@ -74,18 +77,18 @@ class _FriendsGridWidgetState extends State<FriendsGridWidget> {
                   ),
                 ),
                 Container(
-                  height: 4.scale,
+                  height: 3.scale,
                   color: theme.primaryColor,
                 ),
               ],
             ),
             Padding(
-              padding:  EdgeInsets.only(
+              padding: EdgeInsets.only(
                 top: 1.scale,
               ),
               child: Text(
                 widget.friends[index].name,
-                style: widget.friends[index].name.length > 20
+                style: widget.friends[index].name.length > 10
                     ? theme.textTheme.overline
                     : theme.textTheme.bodyText2,
               ),

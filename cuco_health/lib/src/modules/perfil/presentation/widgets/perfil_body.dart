@@ -3,13 +3,12 @@ import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/domain/entities/person_entities.dart';
+import '../../../../core/utils/keys.dart';
 
 class PerfilBodyWidget extends StatelessWidget {
   final Person person;
-  
+
   const PerfilBodyWidget({Key? key, required this.person}) : super(key: key);
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +21,29 @@ class PerfilBodyWidget extends StatelessWidget {
           detailItens(
               theme: theme,
               icon: CucoIcons.email,
-              key: 'Email',
+              label: 'Email',
+              key: Keys.emailPerfil,
               value: person.email),
           SizedBox(height: 20.scale),
           detailItens(
               theme: theme,
+              label: 'Telefone',
               icon: CucoIcons.phone,
-              key: 'Celular',
+              key: Keys.phonePerfil,
               value: person.phone),
           SizedBox(height: 20.scale),
           detailItens(
               theme: theme,
               icon: CucoIcons.location,
-              key: 'Local',
+              label: 'Local',
+              key: Keys.localPerfil,
               value: person.local),
           SizedBox(height: 20.scale),
           detailItens(
               theme: theme,
               icon: CucoIcons.cake,
-              key: 'Idade',
+              label: 'Idade',
+              key: Keys.idadePerfil,
               value: '${person.age} Anos'),
           SizedBox(height: 30.scale),
         ],
@@ -51,7 +54,8 @@ class PerfilBodyWidget extends StatelessWidget {
   Widget detailItens(
       {required ThemeData theme,
       required IconData icon,
-      required String key,
+      required String label,
+      required Key key,
       required String value}) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,7 +71,11 @@ class PerfilBodyWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(key, style: theme.textTheme.overline),
+              Text(
+                label,
+                style: theme.textTheme.overline,
+                key: key,
+              ),
               Text(value, style: theme.textTheme.bodyText1),
             ],
           ),

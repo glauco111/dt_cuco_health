@@ -8,6 +8,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../core/utils/keys.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/load_page.dart';
 import '../../../bottom_navigation/presentation/controller/bottom_navigation_controller.dart';
@@ -41,7 +42,8 @@ class _FriendsPageState extends State<FriendsPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(height: 50, title: 'Amigos'),
+        appBar: const CustomAppBar(
+            key: Keys.labelAmigos, height: 50, title: 'Amigos'),
         body: Observer(builder: (context) {
           if (controller.friends.isEmpty && !controller.state.isLoading) {
             return FriendsHeaderWidget(

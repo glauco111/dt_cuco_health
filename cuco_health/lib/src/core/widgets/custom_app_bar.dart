@@ -1,7 +1,6 @@
 import 'package:cuco_health/src/core/utils/extensions/numbers_extension.dart';
+import 'package:cuco_health/src/core/utils/keys.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 
@@ -61,11 +60,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
       actions: [
         Observer(builder: (context) {
           return IconButton(
+              key: Keys.buttonTheme,
               onPressed: () => _themeStore.toggleThemeMode(),
               icon: _themeStore.themeMode == ThemeMode.light
                   ? Icon(CucoIcons.dark,
+                      key: Keys.darkTheme,
                       color: Theme.of(context).backgroundColor)
                   : Icon(CucoIcons.darkFill,
+                      key: Keys.lightTheme,
                       color: Theme.of(context).backgroundColor));
         })
       ],
